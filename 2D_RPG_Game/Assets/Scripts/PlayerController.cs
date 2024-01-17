@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
 
     public LayerMask solidObjectsLayer;
 
-    public LayerMask interacterbleLayer;
+    public LayerMask interactableLayer;
 
     private void Awake()
     {
@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour
     {
         var facingDir = new Vector3(animator.GetFloat("MoveX"), animator.GetFloat("MoveY"));
         var interactPos = transform.position + facingDir;
-        var collider = Physics2D.OverlapCircle(interactPos, 0.2f, interacterbleLayer);
+        var collider = Physics2D.OverlapCircle(interactPos, 0.2f, interactableLayer);
         if (collider != null)
         {
             collider.GetComponent<Interactable>()?.Interact();
@@ -78,7 +78,7 @@ public class PlayerController : MonoBehaviour
 
     private bool IsWalkable(Vector3 targetPos)
     {
-        if (Physics2D.OverlapCircle(targetPos, 0.2f, solidObjectsLayer | interacterbleLayer) != null)
+        if (Physics2D.OverlapCircle(targetPos, 0.2f, solidObjectsLayer | interactableLayer) != null)
         {
             return false;
         }
