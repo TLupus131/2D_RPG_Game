@@ -1,10 +1,10 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
-using Random = UnityEngine.Random;
+using UnityEngine.SceneManagement;
 
-public class RoomFirstDungeonGenerator : RandomWalkGenerator
+public class DungeonController : RandomWalkGenerator
 {
     [SerializeField]
     private int minRoomWidth = 4, minRoomHeight = 4;
@@ -15,10 +15,44 @@ public class RoomFirstDungeonGenerator : RandomWalkGenerator
     private int offset = 1;
     [SerializeField]
     private bool randomWalkRooms = false;
+    
+    private Vector2Int firstRoomCenter;
+
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == "Dungeon")
+        {
+            if (tilemapVisualizer != null)
+            {
+                RunProcedureGeneration();
+                SetPlayerPositionToFirstRoomCenter();
+            }
+        }
+    }
 
     protected override void RunProcedureGeneration()
     {
+        tilemapVisualizer.Clear();
         CreateRooms();
+    }
+
+    private void SetPlayerPositionToFirstRoomCenter()
+    {
+        var player = FindObjectOfType<PlayerController_Dungeon>();
+        if (player != null)
+        {
+            player.transform.position = new Vector3(firstRoomCenter.x, firstRoomCenter.y, player.transform.position.z);
+        }
     }
 
     public void CreateRooms()
@@ -33,6 +67,11 @@ public class RoomFirstDungeonGenerator : RandomWalkGenerator
         else
         {
             floor = CreateSimpleRooms(roomList);
+        }
+
+        if (roomList.Count > 0)
+        {
+            firstRoomCenter = (Vector2Int)Vector3Int.RoundToInt(roomList[0].center);
         }
 
         List<Vector2Int> roomCenters = new List<Vector2Int>();
@@ -86,9 +125,9 @@ public class RoomFirstDungeonGenerator : RandomWalkGenerator
         HashSet<Vector2Int> corridor = new HashSet<Vector2Int>();
         var position = currentRoomCenter;
         corridor.Add(position);
-        while (position.y != destination.y) 
+        while (position.y != destination.y)
         {
-            if (destination.y > position.y) 
+            if (destination.y > position.y)
             {
                 position += Vector2Int.up;
             }
@@ -117,15 +156,15 @@ public class RoomFirstDungeonGenerator : RandomWalkGenerator
     {
         Vector2Int closest = Vector2Int.zero;
         float distance = float.MaxValue;
-        foreach (var position in roomCenters) 
+        foreach (var position in roomCenters)
         {
             float currentDistance = Vector2Int.Distance(position, currentRoomCenter);
-            if(currentDistance < distance)
+            if (currentDistance < distance)
             {
                 distance = currentDistance;
                 closest = position;
             }
-        }   
+        }
         return closest;
     }
 
