@@ -7,12 +7,12 @@ using Random = UnityEngine.Random;
 public class RoomFirstDungeonGenerator : RandomWalkGenerator
 {
     [SerializeField]
-    private int minRoomWidth = 4, minRoomHeight = 4;
+    private int minRoomWidth = 10, minRoomHeight = 10;
     [SerializeField]
-    private int dungeonWidth = 20, dungeonHeight = 20;
+    private int dungeonWidth = 70, dungeonHeight = 70;
     [SerializeField]
     [Range(0, 10)]
-    private int offset = 1;
+    private int offset = 2;
     [SerializeField]
     private bool randomWalkRooms = false;
 
