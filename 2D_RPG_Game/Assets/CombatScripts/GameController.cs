@@ -14,10 +14,12 @@ public class GameController2 : MonoBehaviour
     private GameObject battleMenu;
 
     public Text battleText;
+    public GameObject gameOver;
     // Start is called before the first frame update
 
     void Start()
     {
+        this.gameOver.SetActive(false);
         fighterStats = new List<FighterStats>();
         GameObject hero = GameObject.FindGameObjectWithTag("Hero");
         FighterStats currentFighterStats = hero.GetComponent<FighterStats>();
@@ -58,5 +60,17 @@ public class GameController2 : MonoBehaviour
             }
         }
         else NextTurn();
+    }
+
+    public void QuitToMenu()
+    {
+        Debug.Log("Quit To Menu");
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void Replay()
+    {
+        Debug.Log("Replay");
+        SceneManager.LoadScene("WorldMap");
     }
 }

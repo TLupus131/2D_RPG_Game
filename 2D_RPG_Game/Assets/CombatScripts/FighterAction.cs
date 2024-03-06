@@ -43,6 +43,7 @@ public class FighterAction : MonoBehaviour
         }
         else
         {
+            attackPrefab.GetComponent<AttackScript>().Run();
             Debug.Log("Run");
         }
     }

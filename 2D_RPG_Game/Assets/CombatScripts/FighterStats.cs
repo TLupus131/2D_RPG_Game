@@ -67,11 +67,20 @@ public class FighterStats : MonoBehaviour, IComparable
         if (health <= 0)
         {
             dead = true;
-            if (dead == true)
+            if (dead == true && gameObject.tag.Equals("Enemy"))
+            {
+                Debug.Log("Enemy is dead");
+                Debug.Log(gameObject.tag);
+                GameControllerObj.GetComponent<GameController2>().gameOver.gameObject.SetActive(true);
+            }
+
+            if (dead == true && gameObject.tag.Equals("Hero"))
             {
                 Debug.Log("You are dead");
+                Debug.Log(gameObject.tag);
+                GameControllerObj.GetComponent<GameController2>().gameOver.gameObject.SetActive(true);
             }
-            gameObject.tag = "Dead";
+            //gameObject.tag = "Dead";
             Destroy(healthFill);
             Destroy(gameObject);
             SceneManager.LoadScene("dungeon");
