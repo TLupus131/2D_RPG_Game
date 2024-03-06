@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 68f781177dcbfa347aeda1454908d37c
+guid: f00c282221cb4cc48875a4aac6c27f34
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Torch_Red_0
+      name: Torch_Red - Copy_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7903b0a47d7b992449f013d8d09713c7
-      internalID: 174387573
+      spriteID: 986efed6dad527349b7cd794dde1136b
+      internalID: 144968720
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Torch_Red_1
+      name: Torch_Red - Copy_1
       rect:
         serializedVersion: 2
         x: 192
@@ -158,14 +158,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 760d71e60f2c63741a88a793d421dfc4
-      internalID: 827519067
+      spriteID: f19b149fccd70f74288fd7f3d3cfca8d
+      internalID: 206405280
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Torch_Red_2
+      name: Torch_Red - Copy_2
       rect:
         serializedVersion: 2
         x: 384
@@ -179,14 +179,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa889cce842e03b4db0517e565e299e9
-      internalID: -1140599803
+      spriteID: 4000a8d7c6f40ef49b0e73651805a5d8
+      internalID: -1863895860
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Torch_Red_3
+      name: Torch_Red - Copy_3
       rect:
         serializedVersion: 2
         x: 576
@@ -200,14 +200,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 728ea24270fab5c4abd71ee0caff15ea
-      internalID: 338630866
+      spriteID: a0bfed45b398ddc4ba28f918561cf0a0
+      internalID: -2085079405
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Torch_Red_4
+      name: Torch_Red - Copy_4
       rect:
         serializedVersion: 2
         x: 768
@@ -221,14 +221,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d61e46e6b2e54754db7429c4cf98bbe9
-      internalID: -244228057
+      spriteID: 2c04970afc1b7ef44a830ca1c230e93c
+      internalID: -1601749987
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Torch_Red_5
+      name: Torch_Red - Copy_5
       rect:
         serializedVersion: 2
         x: 960
@@ -242,14 +242,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 41885f2ad2126334cb9beecb197bf044
-      internalID: 786134020
+      spriteID: 7bfbf020483e9f6498bf9367ce07c265
+      internalID: -66676882
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Torch_Red_6
+      name: Torch_Red - Copy_6
       rect:
         serializedVersion: 2
         x: 1152
@@ -263,35 +263,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9aa09fa122d00f54f8a70621bc73baef
-      internalID: -1107747777
+      spriteID: 52c527fbcd34d0e439cda5f087fcd2e8
+      internalID: -404908422
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Torch_Red_7
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 576
-        width: 192
-        height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 35853b60672097646808b892569cda43
-      internalID: 1012644522
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Torch_Red_8
+      name: Torch_Red - Copy_7
       rect:
         serializedVersion: 2
         x: 192
@@ -305,14 +284,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 94825ccdb814ec84d9a9265e6fbd5ae1
-      internalID: 1102886025
+      spriteID: 95ee222f1a9cea04888f3a1f51fb3e9c
+      internalID: -1464026311
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Torch_Red_9
+      name: Torch_Red - Copy_8
       rect:
         serializedVersion: 2
         x: 384
@@ -326,14 +305,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 53815142a035d874294e01c9529897f4
-      internalID: 866331308
+      spriteID: 73680a7643659074caf8aa0486288653
+      internalID: 724993851
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Torch_Red_10
+      name: Torch_Red - Copy_9
       rect:
         serializedVersion: 2
         x: 576
@@ -347,14 +326,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a484dbc0d3656645a0764e276ea68d2
-      internalID: -1892137280
+      spriteID: bc8c217ec769c754fb77202500b9e6d3
+      internalID: 792555272
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Torch_Red_11
+      name: Torch_Red - Copy_10
       rect:
         serializedVersion: 2
         x: 768
@@ -368,14 +347,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d7bf2e7c0707adb44b2523b30a4fc75a
-      internalID: -1194297075
+      spriteID: 21f2fdb940300394690a3d009c973f79
+      internalID: -957918903
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Torch_Red_12
+      name: Torch_Red - Copy_11
       rect:
         serializedVersion: 2
         x: 960
@@ -389,18 +368,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d303e0d51fab830439be379641005b1f
-      internalID: -1834227317
+      spriteID: 10c4489238504f141b4befd973cb6b7f
+      internalID: 1865044972
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Torch_Red_13
+      name: Torch_Red - Copy_12
       rect:
         serializedVersion: 2
-        x: 0
-        y: 384
+        x: 1152
+        y: 576
         width: 192
         height: 192
       alignment: 0
@@ -410,14 +389,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 64c390b4cdcd46745be9c505a0d41cde
-      internalID: 874058393
+      spriteID: 1a5ee997852a86d4d981151ffdd421cd
+      internalID: -956154973
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Torch_Red_14
+      name: Torch_Red - Copy_13
       rect:
         serializedVersion: 2
         x: 192
@@ -431,14 +410,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ebd3a8e47fba3104fb4692d898ae6093
-      internalID: -1054490829
+      spriteID: 7d4a252b18760f7439d0ae9bd870c4b6
+      internalID: -1021237328
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Torch_Red_15
+      name: Torch_Red - Copy_14
       rect:
         serializedVersion: 2
         x: 384
@@ -452,14 +431,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: db011d7e9d0657644a920cd94a01ddb8
-      internalID: -1396964688
+      spriteID: 91dab5cc983276d4086f2895932fa29f
+      internalID: -1296467051
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Torch_Red_16
+      name: Torch_Red - Copy_15
       rect:
         serializedVersion: 2
         x: 576
@@ -473,14 +452,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5fe70c60d6dd058448614db37ba64e81
-      internalID: 263879423
+      spriteID: b8ec53d3101df1946be402e80d1239ee
+      internalID: -238308016
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Torch_Red_17
+      name: Torch_Red - Copy_16
       rect:
         serializedVersion: 2
         x: 768
@@ -494,14 +473,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 29a72099932810b41b4e053c3251fde4
-      internalID: -1367953811
+      spriteID: 96bc901f9efdaed4cb9e2a99a3c4e3f0
+      internalID: -523014454
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Torch_Red_18
+      name: Torch_Red - Copy_17
       rect:
         serializedVersion: 2
         x: 960
@@ -515,18 +494,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e5d212c2fc7feef4c87666daa348795b
-      internalID: 1891908767
+      spriteID: 5f72b3526bfc5794dad39bf3b66a31e8
+      internalID: -1199204779
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Torch_Red_19
+      name: Torch_Red - Copy_18
       rect:
         serializedVersion: 2
-        x: 0
-        y: 192
+        x: 1152
+        y: 384
         width: 192
         height: 192
       alignment: 0
@@ -536,14 +515,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c8e625e76019a0641aa1516d0124b9f8
-      internalID: 1548959431
+      spriteID: c67739e46080b084cbf7fb92f0be6d7b
+      internalID: -249067719
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Torch_Red_20
+      name: Torch_Red - Copy_19
       rect:
         serializedVersion: 2
         x: 192
@@ -557,14 +536,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f83199a9fe5fb4a4eb675f462b96df2a
-      internalID: 499862824
+      spriteID: b61cc923e540f024389d15c1d8721f15
+      internalID: -1235445397
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Torch_Red_21
+      name: Torch_Red - Copy_20
       rect:
         serializedVersion: 2
         x: 384
@@ -578,14 +557,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6177396b0b209ec4c8d02c95440c7d09
-      internalID: -1313233706
+      spriteID: d859e17d11124c24a875dc30d2ddad3a
+      internalID: 914190471
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Torch_Red_22
+      name: Torch_Red - Copy_21
       rect:
         serializedVersion: 2
         x: 576
@@ -599,14 +578,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 28c817e750518164ba01dd64fdde8ac3
-      internalID: -696583929
+      spriteID: 79ba789178cb28b4fba29659def9e6ea
+      internalID: 1614532170
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Torch_Red_23
+      name: Torch_Red - Copy_22
       rect:
         serializedVersion: 2
         x: 768
@@ -620,14 +599,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d6b81f169fa4f8c4eaf3e69ad6017025
-      internalID: 1466143339
+      spriteID: 73a006c6b3d47d247871fb30da90e758
+      internalID: -775449370
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Torch_Red_24
+      name: Torch_Red - Copy_23
       rect:
         serializedVersion: 2
         x: 960
@@ -641,18 +620,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 27f825a16ae4f954b86410c72b319881
-      internalID: -1273962823
+      spriteID: 68caeaf5b7c1c2c41ad1c01bed698a05
+      internalID: -585021426
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Torch_Red_25
+      name: Torch_Red - Copy_24
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 1152
+        y: 192
         width: 192
         height: 192
       alignment: 0
@@ -662,14 +641,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 35564d87eb3975544964e8b41e6a8307
-      internalID: 1712493964
+      spriteID: 828521066d2e19045b7f128aeb473d7c
+      internalID: -1174072471
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Torch_Red_26
+      name: Torch_Red - Copy_25
       rect:
         serializedVersion: 2
         x: 192
@@ -683,14 +662,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5d7619ebc69e85c468bdaee80ae4e7d0
-      internalID: 1366848435
+      spriteID: f6e65ef7dbcde924da63c4bc66075c6c
+      internalID: -1037008311
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Torch_Red_27
+      name: Torch_Red - Copy_26
       rect:
         serializedVersion: 2
         x: 384
@@ -704,14 +683,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b56262cae6dfc904bb633bb46ff2c28d
-      internalID: 1758671160
+      spriteID: 512df265bc93d5e4a8b4e2771708c87e
+      internalID: 1086274121
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Torch_Red_28
+      name: Torch_Red - Copy_27
       rect:
         serializedVersion: 2
         x: 576
@@ -725,14 +704,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 63b45dfeadfa170429b9aa99c3263c16
-      internalID: 1715290354
+      spriteID: 20ffee73458420348b72aa23048e1f0b
+      internalID: 1211741622
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Torch_Red_29
+      name: Torch_Red - Copy_28
       rect:
         serializedVersion: 2
         x: 768
@@ -746,14 +725,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a3700474be0f95d449e849623e5be651
-      internalID: -764234626
+      spriteID: c8e62cbc48137a947a1eb6dfd7c6257f
+      internalID: -324719506
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Torch_Red_30
+      name: Torch_Red - Copy_29
       rect:
         serializedVersion: 2
         x: 960
@@ -767,8 +746,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2f0ff0a11ed3f6c4dbd2abd81878166e
-      internalID: 1069541355
+      spriteID: 6b3ef2ed4e99ade428f975b671ab4416
+      internalID: -51467705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Torch_Red - Copy_30
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 0
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dd60b5e91bc3d4488f8a895215b3d7b
+      internalID: 649888435
       vertices: []
       indices: 
       edges: []
@@ -784,37 +784,37 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Torch_Red_0: 174387573
-      Torch_Red_1: 827519067
-      Torch_Red_10: -1892137280
-      Torch_Red_11: -1194297075
-      Torch_Red_12: -1834227317
-      Torch_Red_13: 874058393
-      Torch_Red_14: -1054490829
-      Torch_Red_15: -1396964688
-      Torch_Red_16: 263879423
-      Torch_Red_17: -1367953811
-      Torch_Red_18: 1891908767
-      Torch_Red_19: 1548959431
-      Torch_Red_2: -1140599803
-      Torch_Red_20: 499862824
-      Torch_Red_21: -1313233706
-      Torch_Red_22: -696583929
-      Torch_Red_23: 1466143339
-      Torch_Red_24: -1273962823
-      Torch_Red_25: 1712493964
-      Torch_Red_26: 1366848435
-      Torch_Red_27: 1758671160
-      Torch_Red_28: 1715290354
-      Torch_Red_29: -764234626
-      Torch_Red_3: 338630866
-      Torch_Red_30: 1069541355
-      Torch_Red_4: -244228057
-      Torch_Red_5: 786134020
-      Torch_Red_6: -1107747777
-      Torch_Red_7: 1012644522
-      Torch_Red_8: 1102886025
-      Torch_Red_9: 866331308
+      Torch_Red - Copy_0: 144968720
+      Torch_Red - Copy_1: 206405280
+      Torch_Red - Copy_10: -957918903
+      Torch_Red - Copy_11: 1865044972
+      Torch_Red - Copy_12: -956154973
+      Torch_Red - Copy_13: -1021237328
+      Torch_Red - Copy_14: -1296467051
+      Torch_Red - Copy_15: -238308016
+      Torch_Red - Copy_16: -523014454
+      Torch_Red - Copy_17: -1199204779
+      Torch_Red - Copy_18: -249067719
+      Torch_Red - Copy_19: -1235445397
+      Torch_Red - Copy_2: -1863895860
+      Torch_Red - Copy_20: 914190471
+      Torch_Red - Copy_21: 1614532170
+      Torch_Red - Copy_22: -775449370
+      Torch_Red - Copy_23: -585021426
+      Torch_Red - Copy_24: -1174072471
+      Torch_Red - Copy_25: -1037008311
+      Torch_Red - Copy_26: 1086274121
+      Torch_Red - Copy_27: 1211741622
+      Torch_Red - Copy_28: -324719506
+      Torch_Red - Copy_29: -51467705
+      Torch_Red - Copy_3: -2085079405
+      Torch_Red - Copy_30: 649888435
+      Torch_Red - Copy_4: -1601749987
+      Torch_Red - Copy_5: -66676882
+      Torch_Red - Copy_6: -404908422
+      Torch_Red - Copy_7: -1464026311
+      Torch_Red - Copy_8: 724993851
+      Torch_Red - Copy_9: 792555272
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

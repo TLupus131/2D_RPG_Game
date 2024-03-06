@@ -20,7 +20,9 @@ public class DungeonController : RandomWalkGenerator
     private GameObject gold, chest, enemy;
     [SerializeField]
     private Tilemap floorTile;
-    
+    [SerializeField]
+    private Tilemap wallTile;
+
     private Vector2Int firstRoomCenter;
     private Vector2Int lastRoomCenter;
 
@@ -40,9 +42,38 @@ public class DungeonController : RandomWalkGenerator
         {
             if (tilemapVisualizer != null)
             {
-                RunProcedureGeneration();
-                SetPlayerPositionToFirstRoomCenter();
-                SetChestPositionToLastRoomCenter();
+                HashSet<Vector2Int> savedFloor = GameManager.Instance.SavedFloor;
+                List<DungeonObjects> savedObjects = GameManager.Instance.DungeonObjectsList;
+                Vector3 savedPlayerPosition = GameManager.Instance.PlayerPosition;
+                Vector3 savedChestPosition = GameManager.Instance.ChestPosition;
+                if (savedFloor == null || savedFloor.Count == 0)
+                {
+                    RunProcedureGeneration();
+                    SetPlayerPositionToFirstRoomCenter();
+                    SetChestPositionToLastRoomCenter();
+                }
+                else
+                {
+                    tilemapVisualizer.Clear();
+                    tilemapVisualizer.PaintFloorTiles(savedFloor);
+                    WallGenerator.CreateWalls(savedFloor, tilemapVisualizer);
+                    var player = FindObjectOfType<PlayerController_Dungeon>();
+                    player.transform.position = savedPlayerPosition;
+                    chest.transform.position = savedChestPosition;
+                    foreach (DungeonObjects obj in savedObjects)
+                    {
+                        Debug.Log("Object: " + obj.prefab.ToString());
+                        if (obj.prefab.Equals("gold"))
+                        {
+                            tilemapVisualizer.PaintSingleObject(gold, obj.position);
+                        }else if (obj.prefab.Equals("enemy"))
+                        {
+                            tilemapVisualizer.PaintSingleObject(enemy, obj.position);
+                        }
+                    }
+                    gold.SetActive(false);
+                    enemy.SetActive(false);
+                }
             }
         }
     }
@@ -67,21 +98,22 @@ public class DungeonController : RandomWalkGenerator
         if (chest != null)
         {
             chest.transform.position = new Vector3(lastRoomCenter.x, lastRoomCenter.y, chest.transform.position.z);
+            GameManager.Instance.UpdateChestPosition(chest.transform.position);
         }
     }
 
     public void CreateRooms()
     {
         var roomList = ProceduralGenerator.BinarySpacePartitioning(new BoundsInt((Vector3Int)startPosition, new Vector3Int(dungeonWidth, dungeonHeight, 0)), minRoomWidth, minRoomHeight);
-        HashSet<Vector2Int> floor = new HashSet<Vector2Int>();
+        HashSet<Vector2Int> savedFloor = new HashSet<Vector2Int>();
 
         if (randomWalkRooms)
         {
-            floor = CreateRoomsRandomly(roomList);
+            savedFloor = CreateRoomsRandomly(roomList);
         }
         else
         {
-            floor = CreateSimpleRooms(roomList);
+            savedFloor = CreateSimpleRooms(roomList);
         }
 
         if (roomList.Count > 0)
@@ -96,10 +128,10 @@ public class DungeonController : RandomWalkGenerator
             roomCenters.Add((Vector2Int)Vector3Int.RoundToInt(room.center));
         }
         HashSet<Vector2Int> corridors = ConnectRooms(roomCenters);
-        floor.UnionWith(corridors);
-        tilemapVisualizer.PaintFloorTiles(floor);
-        WallGenerator.CreateWalls(floor, tilemapVisualizer);
-
+        savedFloor.UnionWith(corridors);
+        tilemapVisualizer.PaintFloorTiles(savedFloor);
+        WallGenerator.CreateWalls(savedFloor, tilemapVisualizer);
+        GameManager.Instance.UpdateSavedFloor(savedFloor);
         if (roomList.Count > 0)
         {
             int count = 0;
@@ -112,18 +144,24 @@ public class DungeonController : RandomWalkGenerator
                 {
                     int randomIndex = Random.Range(0, nonWallPositions.Count);
                     Vector2Int objectPosition = nonWallPositions[randomIndex];
-                    GameObject objectPrefab = gold;
-                    tilemapVisualizer.PaintSingleObject(objectPrefab, objectPosition);
+                    DungeonObjects dungeonObject = new DungeonObjects();
+                    dungeonObject.prefab = "gold";
+                    dungeonObject.position = objectPosition;
+                    GameManager.Instance.AddDungeonObject(dungeonObject);
+                    tilemapVisualizer.PaintSingleObject(gold, dungeonObject.position);
                     nonWallPositions.RemoveAt(randomIndex);
                 }
                 for (int i = 0; i < numberOfEnemy; i++)
-                {   
+                {
                     if (count > 0)
                     {
                         int randomIndex = Random.Range(0, nonWallPositions.Count);
                         Vector2Int objectPosition = nonWallPositions[randomIndex];
-                        GameObject objectPrefab = enemy;
-                        tilemapVisualizer.PaintSingleObject(objectPrefab, objectPosition);
+                        DungeonObjects dungeonObject = new DungeonObjects();
+                        dungeonObject.prefab = "enemy";
+                        dungeonObject.position = objectPosition;
+                        GameManager.Instance.AddDungeonObject(dungeonObject);
+                        tilemapVisualizer.PaintSingleObject(enemy, dungeonObject.position);
                         nonWallPositions.RemoveAt(randomIndex);
                     }
                 }
@@ -134,8 +172,14 @@ public class DungeonController : RandomWalkGenerator
                     gold.transform.position = new Vector2(objectPosition2.x, objectPosition2.y);
                     nonWallPositions.RemoveAt(randomIndex2);
                     count++;
+
+                    DungeonObjects dungeonObject = new DungeonObjects();
+                    dungeonObject.prefab = "gold";
+                    dungeonObject.position = objectPosition2;
+                    GameManager.Instance.AddDungeonObject(dungeonObject);
                 }
             }
+            gold.SetActive(false);
             enemy.SetActive(false);
         }
     }
@@ -150,7 +194,7 @@ public class DungeonController : RandomWalkGenerator
             {
                 Vector3Int cellPosition = new Vector3Int(x, y, 0); 
 
-                if (floorTile.HasTile(cellPosition))
+                if (floorTile.HasTile(cellPosition) && !wallTile.HasTile(cellPosition))
                 {
                     Vector2Int position = new Vector2Int(x, y);
                     nonWallPositions.Add(position);
@@ -226,7 +270,6 @@ public class DungeonController : RandomWalkGenerator
         }
         return newCorridor;
     }
-
 
     private Vector2Int GetDirection90From(Vector2Int direction)
     {

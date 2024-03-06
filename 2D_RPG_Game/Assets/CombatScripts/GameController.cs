@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
@@ -14,6 +15,7 @@ public class GameController2 : MonoBehaviour
 
     public Text battleText;
     // Start is called before the first frame update
+
     void Start()
     {
         fighterStats = new List<FighterStats>();

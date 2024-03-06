@@ -1,6 +1,7 @@
+// EnemyController.cs
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyController : MonoBehaviour
 {
@@ -9,11 +10,17 @@ public class EnemyController : MonoBehaviour
     public float distanceBetween;
     public LayerMask solidObjectsLayer;
 
+    private Animator animator;
+    private bool isMoving;
+    private bool loadSceneRequested = false;
     private float distance;
+    private bool isAttacking = false;
+    private Vector2 initialPosition;
 
-    private void Start()
+    private void Awake()
     {
-        
+        animator = GetComponent<Animator>();
+        initialPosition = transform.position;
     }
 
     private void Update()
@@ -22,24 +29,41 @@ public class EnemyController : MonoBehaviour
         Vector2 direction = player.transform.position - transform.position;
         direction.Normalize();
 
-        if (distance < distanceBetween && IsWalkable(transform.position)) 
+        if (distance < distanceBetween && IsWalkable(player.transform.position, transform.position))
         {
-            transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, moveSpeed*Time.deltaTime);
+            animator.SetFloat("MoveX", player.transform.position.x - transform.position.x);
+            animator.SetFloat("MoveY", player.transform.position.y - transform.position.y);
+            isMoving = true;
+            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, moveSpeed * Time.deltaTime);
         }
-        else if (distance <= 1)  
+        else
         {
+            isMoving = false;
+        }
+        if (distance < 1 && !loadSceneRequested && !isAttacking)
+        {
+            GameManager.Instance.RemoveObjectAtPosition(initialPosition);
+            GameManager.Instance.UpdatePlayerPosition(player.transform.position);
+            loadSceneRequested = true;
+            StartCoroutine(LoadSceneAsync("rpg"));
+            gameObject.SetActive(false);
+        }
 
-        }
+        animator.SetBool("IsMoving", isMoving);
     }
 
-    private bool IsWalkable(Vector3 targetPos)
+    private IEnumerator LoadSceneAsync(string sceneName)
     {
-        RaycastHit2D hit = Physics2D.Linecast(targetPos, player.transform.position, solidObjectsLayer);
-        if (hit.collider != null)
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
+        while (!asyncLoad.isDone)
         {
-            return false;
+            yield return null;
         }
-        return true;
     }
 
+    private bool IsWalkable(Vector3 start, Vector3 targetPos)
+    {
+        RaycastHit2D hit = Physics2D.Linecast(start, targetPos, solidObjectsLayer);
+        return hit.collider == null;
+    }
 }

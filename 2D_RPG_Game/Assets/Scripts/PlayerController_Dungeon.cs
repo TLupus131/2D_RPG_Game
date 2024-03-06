@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -78,11 +79,15 @@ public class PlayerController_Dungeon : MonoBehaviour
 
     private bool IsWalkable(Vector3 targetPos)
     {
-        if (Physics2D.OverlapCircle(targetPos, 0.2f, solidObjectsLayer | interactableLayer) != null)
+        Vector2 boxColliderSize = GetComponent<BoxCollider2D>().size;
+        Collider2D hitCollider = Physics2D.OverlapBox(targetPos, boxColliderSize, 0.5f, solidObjectsLayer | interactableLayer);
+
+        if (hitCollider != null)
         {
             return false;
         }
         return true;
     }
+
 }
 

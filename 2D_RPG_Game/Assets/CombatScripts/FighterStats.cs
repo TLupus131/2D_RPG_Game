@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FighterStats : MonoBehaviour, IComparable
 {
@@ -73,6 +74,7 @@ public class FighterStats : MonoBehaviour, IComparable
             gameObject.tag = "Dead";
             Destroy(healthFill);
             Destroy(gameObject);
+            SceneManager.LoadScene("dungeon");
         }
         else if (damage > 0)
         {
