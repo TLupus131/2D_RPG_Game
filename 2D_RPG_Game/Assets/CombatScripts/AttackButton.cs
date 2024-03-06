@@ -31,13 +31,16 @@ public class AttackButton : MonoBehaviour
     {
         if (btn.CompareTo("AttackBin") == 0)
         {
+            GameObject.Find("ActionMenu").gameObject.SetActive(false);
             hero.GetComponent<FighterAction>().SelectAttack("attack");
         }else if(btn.CompareTo("FireBin") == 0)
         {
+            GameObject.Find("ActionMenu").gameObject.SetActive(false);
             hero.GetComponent<FighterAction>().SelectAttack("special");
         }
         else
         {
+            GameObject.Find("ActionMenu").gameObject.SetActive(false);
             hero.GetComponent<FighterAction>().SelectAttack("run");
         }
     }

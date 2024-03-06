@@ -11,4 +11,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Dungeon.unity
     guid: 8782beb037c844d41b82124907cd2b4b
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: be9cfffc057dd9948919fec75b4484b7
+  - enabled: 1
+    path: Assets/Scenes/rpg.unity
+    guid: 0a9ab418a681dc04c9d69874a917f53d
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0

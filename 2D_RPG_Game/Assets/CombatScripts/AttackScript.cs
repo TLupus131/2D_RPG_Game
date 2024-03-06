@@ -68,5 +68,28 @@ public class AttackScript : MonoBehaviour
         targetStats.ReceiveDamage(damage);
     }
 
-    
+    public void Run()
+    {
+        GameObject GameControllerObj = GameObject.Find("GameControllerObject");
+        attackerStats = owner.GetComponent<FighterStats>();
+        float runAbility = 0.25f;
+        float randomValue = Random.value;
+
+        if(randomValue <= runAbility)
+        {
+            Debug.Log("Hero successfully runs away!");
+        }
+        else
+        {
+            GameControllerObj.GetComponent<GameController2>().battleText.gameObject.SetActive(true);
+            GameControllerObj.GetComponent<GameController2>().battleText.text = "Hero couldn't run away...";
+            Debug.Log("Hero couldn't run away...");
+            Invoke("ContinueGame", 2);
+        }
+    }
+
+    void ContinueGame()
+    {
+        GameObject.Find("GameControllerObject").GetComponent<GameController2>().NextTurn();
+    }
 }
