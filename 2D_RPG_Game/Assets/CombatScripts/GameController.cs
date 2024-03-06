@@ -16,6 +16,7 @@ public class GameController2 : MonoBehaviour
     public Text battleText;
     public GameObject gameOver;
     // Start is called before the first frame update
+
     void Start()
     {
         this.gameOver.SetActive(false);

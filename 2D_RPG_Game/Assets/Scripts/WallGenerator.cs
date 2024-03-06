@@ -71,4 +71,5 @@ public static class WallGenerator
         }
         return wallPositions;
     }
+
 }

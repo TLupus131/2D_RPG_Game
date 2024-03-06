@@ -38,6 +38,17 @@ public class TilemapVisualizer : MonoBehaviour
         wallTilemap.ClearAllTiles();
     }
 
+    public void PaintSingleObject(GameObject objectPrefab, Vector2 position)
+    {
+        if (objectPrefab == null)
+        {
+            Debug.LogError("Prefab is null.");
+            return;
+        }
+
+        Instantiate(objectPrefab, new Vector3(position.x, position.y, 0), Quaternion.identity);
+    }
+
     internal void PaintSingleBasicWall(Vector2Int position, string binaryType)
     {
         int typeAsInt = Convert.ToInt32(binaryType, 2);
